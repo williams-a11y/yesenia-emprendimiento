@@ -1,0 +1,651 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Caribbean Travel Agency</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap">
+<style>
+/* Concepto: portada tipográfica sobre foto de playa; cada paquete es un boleto con troquel;
+   la ruta punteada une los pasos del proceso. Colores y letras salen de la presentación de la marca. */
+:root {
+  --navy: #0A2545;
+  --teal: #13A8A6;
+  --teal-deep: #0B7C7A;
+  --gold: #C9A24A;
+
+  --bg: #F6F0E4;
+  --surface: #FFFFFF;
+  --surface-2: #EDE4D2;
+  --ink: #0B2444;
+  --ink-soft: #44546B;
+  --line: rgba(11, 36, 68, .16);
+  --accent-ink: #0B7C7A;
+  --price: #0B2444;
+  --focus: #0B7C7A;
+
+  --on-navy: #F6F0E4;
+  --on-navy-soft: #C3CDDB;
+  --gold-on-navy: #D8B565;
+
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #06152B; --surface: #0C2240; --surface-2: #0F2849; --ink: #F3EDE0; --ink-soft: #B1BDCE;
+    --line: rgba(243, 237, 224, .18); --accent-ink: #52D6D1; --price: #E4C275; --focus: #52D6D1;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #06152B; --surface: #0C2240; --surface-2: #0F2849; --ink: #F3EDE0; --ink-soft: #B1BDCE;
+  --line: rgba(243, 237, 224, .18); --accent-ink: #52D6D1; --price: #E4C275; --focus: #52D6D1;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; font-family: var(--font-body); font-size: 1rem; line-height: 1.65;
+  background: var(--bg); color: var(--ink);
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--navy); }
+img { display: block; max-width: 100%; }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.1; margin: 0; letter-spacing: -.01em; text-wrap: balance; }
+p, ul, ol, dl, dd, figure { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.on-navy :focus-visible { outline-color: var(--gold-on-navy); }
+
+.wrap {
+  width: 100%; max-width: 1180px; margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.section { padding-block: clamp(56px, 8vw, 104px); }
+.s-alt { background: var(--surface-2); }
+section[id] { scroll-margin-top: calc(72px + env(safe-area-inset-top, 0px)); }
+
+h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); }
+.h2r::after { content: ""; display: block; width: 64px; height: 4px; background: var(--gold); margin-top: 16px; }
+.eyebrow { font-size: .75rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 14px; }
+.on-navy .eyebrow { color: var(--gold-on-navy); }
+.lead { font-size: 1.1rem; color: var(--ink-soft); max-width: 62ch; }
+.note { font-size: .85rem; color: var(--ink-soft); }
+
+/* Botones */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 26px; border-radius: 999px; border: 2px solid transparent;
+  font: 700 .8rem/1 var(--font-body); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; cursor: pointer;
+}
+.btn-gold { background: var(--gold); color: var(--navy); }
+.btn-gold:hover { background: #D8B565; }
+.btn-ghost { border-color: rgba(246, 240, 228, .6); color: var(--on-navy); background: transparent; }
+.btn-ghost:hover { background: rgba(246, 240, 228, .12); }
+.btn-teal { background: var(--teal-deep); color: #fff; }
+.btn-teal:hover { background: #096866; }
+.btn-line { border-color: var(--accent-ink); color: var(--accent-ink); background: transparent; padding: 10px 16px; }
+.btn-line:hover { background: var(--teal-deep); border-color: var(--teal-deep); color: #fff; }
+
+/* Encabezado */
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--navy); color: var(--on-navy); }
+.site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; padding-block: 12px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; white-space: nowrap; }
+.brand svg { width: 24px; height: 24px; fill: var(--gold-on-navy); transform: rotate(45deg); flex: none; }
+.nav { flex: 1; min-width: 0; }
+.nav ul { display: flex; gap: 4px; justify-content: flex-end; }
+.nav a { display: block; padding: 8px 12px; font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; color: var(--on-navy-soft); white-space: nowrap; }
+.nav a:hover { color: var(--on-navy); }
+.site-header .btn { padding: 11px 20px; }
+@media (max-width: 880px) {
+  .site-header .wrap { gap: 8px 12px; }
+  .brand { flex: 1; font-size: 1.05rem; gap: 8px; }
+  .brand svg { width: 20px; height: 20px; }
+  .nav { order: 3; flex-basis: 100%; overflow-x: auto; margin-inline: -8px; }
+  .nav ul { justify-content: flex-start; }
+  section[id] { scroll-margin-top: calc(112px + env(safe-area-inset-top, 0px)); }
+}
+
+/* Portada */
+.hero { position: relative; isolation: isolate; overflow: hidden; background: var(--navy); color: var(--on-navy); }
+.hero-bg { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 72% 50%; }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(10, 37, 69, .94) 0%, rgba(10, 37, 69, .72) 40%, rgba(10, 37, 69, .08) 78%); }
+.hero .wrap { padding-block: clamp(72px, 12vw, 152px) clamp(56px, 8vw, 96px); }
+.hero-copy { max-width: 640px; }
+.hero h1 { font-size: clamp(3.2rem, 9vw, 6.4rem); line-height: .96; letter-spacing: -.02em; }
+.hero h1 span { display: block; }
+.hero .rule { display: block; width: 88px; height: 4px; background: var(--gold); margin: 28px 0 22px; }
+.tagline { font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: clamp(1.3rem, 2.8vw, 1.85rem); color: var(--gold-on-navy); line-height: 1.3; }
+.hero p.sub { margin-top: 18px; max-width: 48ch; color: var(--on-navy); font-size: 1.05rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.hero-chip { display: inline-block; margin-top: 28px; padding: 8px 16px; border: 1px solid rgba(216, 181, 101, .6); border-radius: 999px; font-size: .8rem; font-weight: 600; color: var(--gold-on-navy); }
+@media (max-width: 700px) {
+  .hero::after { background: linear-gradient(180deg, rgba(10, 37, 69, .6), rgba(10, 37, 69, .9)); }
+}
+
+/* Quiénes somos */
+.about { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 6vw, 72px); align-items: center; }
+.about img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.about p { margin-top: 0; }
+.about .copy { display: grid; gap: 18px; }
+.about .copy p { color: var(--ink-soft); font-size: 1.05rem; max-width: 60ch; }
+.chips-label { margin-top: 10px; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-ink); }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { padding: 11px 20px; border-radius: 999px; font-size: .88rem; font-weight: 700; background: var(--navy); color: var(--on-navy); border: 1px solid rgba(246, 240, 228, .2); }
+.chip.t { background: var(--teal-deep); color: #fff; border-color: transparent; }
+@media (max-width: 800px) {
+  .about { grid-template-columns: minmax(0, 1fr); }
+  .about img { aspect-ratio: 16 / 11; }
+}
+
+/* Nuestro nombre */
+.name-band { position: relative; isolation: isolate; overflow: hidden; background: var(--navy); color: var(--on-navy); }
+.name-bg { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
+.name-band::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(100deg, rgba(10, 37, 69, .6), rgba(10, 37, 69, .9)); }
+.name-grid { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: clamp(32px, 6vw, 72px); align-items: center; }
+.logo-card { background: #FDFAF5; padding: 10px; border-radius: 6px; box-shadow: 0 18px 50px rgba(0, 0, 0, .35); }
+.logo-card img { width: 100%; height: auto; }
+.name-copy { display: grid; gap: 28px; }
+.terms { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+.terms div { border-top: 1px solid rgba(246, 240, 228, .35); padding-top: 14px; }
+.terms dt { font-family: var(--font-display); font-weight: 600; font-size: 1.7rem; color: var(--gold-on-navy); line-height: 1.15; }
+.terms dd { margin-top: 6px; color: var(--on-navy); }
+.name-copy .join { max-width: 56ch; color: var(--on-navy); font-size: 1.05rem; }
+@media (max-width: 760px) {
+  .name-grid { grid-template-columns: minmax(0, 1fr); }
+  .logo-card { width: min(100%, 260px); }
+}
+
+/* Identidad empresarial */
+.id-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin-top: 40px; }
+.id-cell { padding: 34px 28px 40px; min-height: 230px; background: var(--navy); color: var(--on-navy); }
+.id-cell:nth-child(even) { background: var(--teal-deep); color: #fff; }
+.id-cell .bar { display: block; width: 44px; height: 4px; background: var(--gold); margin-bottom: 22px; }
+.id-cell h3 { font-size: 1.7rem; margin-bottom: 12px; }
+.id-cell p { font-size: .98rem; opacity: .95; }
+
+/* Servicios */
+.svc-layout { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(32px, 5vw, 64px); align-items: start; margin-top: 8px; }
+.svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; margin-top: 32px; }
+.svc { display: flex; flex-direction: column; gap: 14px; padding: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+.svc svg { width: 30px; height: 30px; fill: none; stroke: var(--accent-ink); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.svc svg.solid { fill: var(--accent-ink); stroke: none; }
+.svc h3 { font-family: var(--font-body); font-size: .98rem; font-weight: 700; line-height: 1.35; letter-spacing: 0; }
+.value { background: var(--navy); color: var(--on-navy); }
+.value img { width: 100%; aspect-ratio: 820 / 584; object-fit: cover; }
+.value .body { padding: 28px; }
+.value h3 { font-size: 1.8rem; color: var(--gold-on-navy); margin-bottom: 16px; font-weight: 500; }
+.value li { display: flex; gap: 12px; padding-block: 5px; }
+.value li::before { content: ""; flex: none; width: 14px; height: 2px; margin-top: .85em; background: var(--gold-on-navy); }
+@media (max-width: 900px) { .svc-layout { grid-template-columns: minmax(0, 1fr); } }
+
+/* Para cada viajero */
+.who { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(32px, 6vw, 72px); align-items: center; }
+.who .copy { display: grid; gap: 20px; }
+.who img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+@media (max-width: 800px) {
+  .who { grid-template-columns: minmax(0, 1fr); }
+  .who img { aspect-ratio: 16 / 11; object-position: 50% 30%; }
+}
+
+/* Paquetes */
+.pack-intro { display: grid; gap: 14px; margin-bottom: 8px; }
+.group { margin-top: 56px; }
+.group-head { display: flex; align-items: center; gap: 18px; margin-bottom: 24px; }
+.group-head h3 { font-size: 1.9rem; white-space: nowrap; }
+.group-head::after { content: ""; flex: 1; min-width: 24px; border-top: 2px dashed var(--line); }
+.group-head p { order: 3; font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-ink); white-space: nowrap; }
+.pack-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 20px; }
+.ticket { position: relative; display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); }
+.ticket img { width: 100%; aspect-ratio: 512 / 485; object-fit: cover; }
+.ticket-body { display: flex; flex-direction: column; gap: 6px; flex: 1; padding: 18px 18px 18px; }
+.ticket h4 { font-size: 1.4rem; }
+.ticket .stay { font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); }
+.ticket .incl { font-size: .92rem; line-height: 1.5; color: var(--ink-soft); }
+.stub { position: relative; display: flex; flex-direction: column; gap: 12px; padding: 18px; border-top: 2px dashed var(--line); }
+.stub::before, .stub::after { content: ""; position: absolute; top: -11px; width: 20px; height: 20px; border-radius: 50%; background: var(--bg); }
+.stub::before { left: -11px; }
+.stub::after { right: -11px; }
+.per { display: block; font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
+.price { font-family: var(--font-display); font-weight: 700; font-size: 1.75rem; line-height: 1.1; color: var(--price); font-variant-numeric: tabular-nums; }
+.price small { font-size: .9rem; font-weight: 600; margin-right: 3px; }
+.stub .btn { width: 100%; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  .ticket { transition: transform .2s ease, box-shadow .2s ease; }
+  .ticket:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(10, 37, 69, .18); }
+}
+
+/* Cómo organizamos tu viaje */
+.process { position: relative; isolation: isolate; overflow: hidden; background: var(--navy); color: var(--on-navy); }
+.process-bg { position: absolute; left: 0; right: 0; bottom: 0; z-index: -1; width: 100%; height: 60%; object-fit: cover; object-position: 50% 40%; opacity: .75; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 70%); mask-image: linear-gradient(to bottom, transparent, #000 70%); }
+.process .section { padding-bottom: clamp(150px, 24vw, 280px); }
+.steps { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); margin-top: 52px; counter-reset: paso; }
+.steps li { position: relative; display: flex; flex-direction: column; align-items: center; gap: 14px; padding-inline: 6px; text-align: center; font-size: .92rem; font-weight: 700; line-height: 1.35; }
+.steps li::before { content: ""; position: absolute; top: 28px; left: calc(50% + 36px); width: calc(100% - 72px); border-top: 2px dashed var(--gold-on-navy); opacity: .85; }
+.steps li:last-child::before { display: none; }
+.steps .n { flex: none; width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; background: var(--gold); color: var(--navy); font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; }
+.steps li:nth-child(even) .n { background: var(--teal); }
+@media (max-width: 900px) {
+  .steps { grid-template-columns: minmax(0, 1fr); max-width: 420px; }
+  .steps li { flex-direction: row; text-align: left; gap: 18px; padding: 0 0 40px 0; align-items: flex-start; }
+  .steps li > span:last-child { padding-top: 15px; }
+  .steps li::before { top: 64px; bottom: 8px; left: 27px; width: 0; border-top: 0; border-left: 2px dashed var(--gold-on-navy); }
+  .steps li:last-child { padding-bottom: 0; }
+}
+
+/* Equipo */
+.team { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(32px, 5vw, 64px); align-items: start; }
+.org { margin-top: 36px; }
+.org-top { position: relative; width: min(100%, 300px); margin: 0 auto 28px; padding: 18px 20px; background: var(--navy); color: var(--on-navy); text-align: center; border-radius: 10px; }
+.org-top::after { content: ""; position: absolute; left: 50%; top: 100%; height: 28px; border-left: 2px dashed var(--gold); }
+.org-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+.member { padding: 16px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+.role { display: block; font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-ink); }
+.org-top .role { color: var(--gold-on-navy); }
+.person { display: block; margin-top: 4px; font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; line-height: 1.2; }
+.team-note { margin-top: 28px; max-width: 62ch; color: var(--ink-soft); }
+.office img { width: 100%; aspect-ratio: 691 / 717; object-fit: cover; }
+.office figcaption { margin-top: 12px; font-size: .88rem; color: var(--ink-soft); }
+@media (max-width: 900px) { .team { grid-template-columns: minmax(0, 1fr); } .office { max-width: 460px; } }
+
+/* Cotizar */
+.quote { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 6vw, 72px); align-items: start; }
+.quote .copy { display: grid; gap: 18px; }
+.where { margin-top: 8px; padding-top: 18px; border-top: 1px dashed var(--line); font-size: .92rem; color: var(--ink-soft); }
+.where strong { display: block; color: var(--ink); font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 4px; }
+form.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: clamp(20px, 3vw, 32px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.field { display: grid; gap: 6px; min-width: 0; }
+.field.full { grid-column: 1 / -1; }
+.field label { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
+.field input, .field select, .field textarea {
+  width: 100%; min-width: 0; padding: 12px 14px; font: inherit; font-size: .98rem; color: var(--ink);
+  background: var(--bg); border: 1px solid var(--line); border-radius: 6px;
+}
+.field textarea { resize: vertical; min-height: 84px; }
+.estimate { grid-column: 1 / -1; padding: 14px 16px; border: 1px dashed var(--accent-ink); border-radius: 6px; font-size: .88rem; color: var(--ink-soft); }
+.estimate b { display: block; font-family: var(--font-display); font-size: 1.6rem; line-height: 1.2; color: var(--price); font-variant-numeric: tabular-nums; }
+.form-actions { grid-column: 1 / -1; }
+.result { grid-column: 1 / -1; display: grid; gap: 12px; padding-top: 18px; border-top: 1px dashed var(--line); }
+.result textarea { width: 100%; padding: 12px 14px; font: inherit; font-size: .95rem; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; min-height: 110px; resize: vertical; }
+.result .row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+@media (max-width: 860px) { .quote { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 480px) { form.card { grid-template-columns: minmax(0, 1fr); } }
+
+/* Pie */
+.site-footer { background: var(--navy); color: var(--on-navy); }
+.foot { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 28px 40px; align-items: center; padding-block: 56px 28px; }
+.foot .logo-card { width: 120px; padding: 6px; box-shadow: none; }
+.foot p { max-width: 64ch; color: var(--on-navy-soft); }
+.foot .tagline { margin-top: 12px; }
+.legal { padding-block: 0 36px; font-size: .8rem; color: var(--on-navy-soft); }
+@media (max-width: 560px) { .foot { grid-template-columns: minmax(0, 1fr); } }
+</style>
+
+<header class="site-header on-navy">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Caribbean Travel Agency, ir al inicio">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+      Caribbean Travel Agency
+    </a>
+    <nav class="nav" aria-label="Secciones">
+      <ul>
+        <li><a href="#quienes-somos">Quiénes somos</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#paquetes">Paquetes</a></li>
+        <li><a href="#proceso">Cómo trabajamos</a></li>
+        <li><a href="#equipo">Equipo</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-gold" href="#cotizar">Cotizar</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero on-navy" id="inicio">
+    <img class="hero-bg" src="img/hero.jpg" alt="Playa de arena blanca con palmeras y mar turquesa visto desde arriba">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Santiago de los Caballeros · República Dominicana</p>
+        <h1><span>Caribbean</span><span>Travel Agency</span></h1>
+        <span class="rule"></span>
+        <p class="tagline">«Viaja, descubre y vive la experiencia».</p>
+        <p class="sub">Paquetes turísticos, reservaciones y asesoramiento personalizado para tus viajes nacionales e internacionales.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#paquetes">Ver paquetes</a>
+          <a class="btn btn-ghost" href="#cotizar">Cotizar mi viaje</a>
+        </div>
+        <span class="hero-chip">Paquetes desde RD$9,800 por persona</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="quienes-somos">
+    <div class="wrap about">
+      <img src="img/aeropuerto.jpg" alt="Una pareja camina con maletas por una terminal de aeropuerto al atardecer" loading="lazy">
+      <div class="copy">
+        <div>
+          <h2 class="h2r">Quiénes somos</h2>
+        </div>
+        <p>Caribbean Travel Agency es una propuesta de emprendimiento turístico ubicada en Santiago de los Caballeros, dedicada a facilitar viajes nacionales e internacionales mediante paquetes turísticos, reservaciones y asesoramiento personalizado.</p>
+        <p>Elegimos esta idea porque nos interesa el turismo y queremos ayudar a las personas a conocer nuevos destinos, aplicando nuestros conocimientos empresariales.</p>
+        <p class="chips-label">Beneficios para nuestros clientes</p>
+        <ul class="chips">
+          <li class="chip">Comodidad</li>
+          <li class="chip t">Ahorro de tiempo</li>
+          <li class="chip">Variedad de destinos</li>
+          <li class="chip t">Asesoramiento</li>
+          <li class="chip">Paquetes para cada presupuesto</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="name-band on-navy" id="nombre">
+    <img class="name-bg" src="img/cielo.jpg" alt="" loading="lazy">
+    <div class="section">
+      <div class="wrap name-grid">
+        <div class="logo-card"><img src="img/logo.jpg" alt="Logo de Caribbean Travel Agency: globo terráqueo, avión, palmera y maleta" loading="lazy"></div>
+        <div class="name-copy">
+          <div>
+            <p class="eyebrow">Nuestra marca</p>
+            <h2 class="h2r">Nuestro nombre</h2>
+          </div>
+          <dl class="terms">
+            <div><dt>Caribbean</dt><dd>Representa nuestra identidad caribeña.</dd></div>
+            <div><dt>Travel Agency</dt><dd>Identifica nuestra actividad como agencia de viajes.</dd></div>
+          </dl>
+          <p class="join">Juntos transmiten una empresa dedicada a conectar a las personas con diferentes destinos del mundo.</p>
+          <p class="tagline">«Viaja, descubre y vive la experiencia».</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section s-alt" id="identidad">
+    <div class="wrap">
+      <h2 class="h2r">Identidad empresarial</h2>
+      <div class="id-grid">
+        <div class="id-cell"><span class="bar"></span><h3>Misión</h3><p>Ofrecer servicios turísticos de calidad y atención personalizada.</p></div>
+        <div class="id-cell"><span class="bar"></span><h3>Visión</h3><p>Ser una agencia reconocida por su confianza y calidad.</p></div>
+        <div class="id-cell"><span class="bar"></span><h3>Valores</h3><p>Responsabilidad, honestidad, compromiso, respeto y trabajo en equipo.</p></div>
+        <div class="id-cell"><span class="bar"></span><h3>Objetivo general</h3><p>Facilitar la organización de viajes y ofrecer experiencias satisfactorias.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="servicios">
+    <div class="wrap">
+      <h2 class="h2r">Concepto y servicios</h2>
+      <div class="svc-layout">
+        <div>
+          <p class="lead">Organizamos cada viaje de principio a fin: reunimos en un solo lugar todo lo que el cliente necesita para viajar sin complicaciones.</p>
+          <div class="svc-grid">
+            <article class="svc">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="7" width="12" height="13" rx="2"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M10 11v5M14 11v5"/></svg>
+              <h3>Paquetes nacionales e internacionales</h3>
+            </article>
+            <article class="svc">
+              <svg class="solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+              <h3>Boletos aéreos</h3>
+            </article>
+            <article class="svc">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19V6M3 15h18v4M21 15v-2.5a3 3 0 0 0-3-3h-7V15"/><circle cx="7" cy="11.5" r="1.6"/></svg>
+              <h3>Reservaciones de hoteles</h3>
+            </article>
+            <article class="svc">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19l6-10 4 6 2-3 6 7z"/></svg>
+              <h3>Excursiones</h3>
+            </article>
+            <article class="svc">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="13" rx="2"/><path d="M4 11h16M7 20v-3M17 20v-3"/><circle cx="8" cy="14.2" r=".7"/><circle cx="16" cy="14.2" r=".7"/></svg>
+              <h3>Transporte turístico</h3>
+            </article>
+            <article class="svc">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>
+              <h3>Asesoramiento de viajes</h3>
+            </article>
+          </div>
+        </div>
+        <aside class="value">
+          <img src="img/amigos-velero.jpg" alt="Grupo de amigos sonriendo a bordo de un velero en el mar Caribe" loading="lazy">
+          <div class="body">
+            <h3>Valor agregado</h3>
+            <ul>
+              <li>Atención personalizada</li>
+              <li>Variedad de destinos</li>
+              <li>Precios competitivos</li>
+              <li>Paquetes flexibles</li>
+              <li>Orientación según el presupuesto de cada cliente</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section s-alt" id="viajeros">
+    <div class="wrap who">
+      <div class="copy">
+        <p class="eyebrow">Para cada viajero</p>
+        <h2 class="h2r">Viaja en pareja, en familia o con amigos</h2>
+        <p class="lead">Jóvenes, adultos, familias, parejas y grupos de amigos de Santiago y de otras localidades del país tienen aquí un paquete a su medida.</p>
+        <ul class="chips">
+          <li class="chip">Ofertas por temporadas</li>
+          <li class="chip t">Promociones para familias y grupos</li>
+        </ul>
+      </div>
+      <img src="img/familia.jpg" alt="Una familia camina sonriendo por la orilla de una playa" loading="lazy">
+    </div>
+  </section>
+
+  <section class="section" id="paquetes">
+    <div class="wrap">
+      <div class="pack-intro">
+        <h2 class="h2r">Paquetes turísticos</h2>
+        <p class="lead">Elige tu destino. Cada precio es por persona e incluye lo que indica la tarjeta.</p>
+      </div>
+      <div class="group">
+        <div class="group-head"><h3>Nacionales</h3><p>5 destinos</p></div>
+        <div class="pack-grid" id="grid-nac"></div>
+      </div>
+      <div class="group">
+        <div class="group-head"><h3>Internacionales</h3><p>5 destinos</p></div>
+        <div class="pack-grid" id="grid-int"></div>
+      </div>
+      <p class="note" style="margin-top:28px">Precios estimados por persona, con fines académicos para el proyecto escolar.</p>
+    </div>
+  </section>
+
+  <section class="process on-navy" id="proceso">
+    <img class="process-bg" src="img/ala.jpg" alt="" loading="lazy">
+    <div class="section">
+      <div class="wrap">
+        <p class="eyebrow">Modelo de producción</p>
+        <h2 class="h2r">Cómo organizamos tu viaje</h2>
+        <ol class="steps">
+          <li><span class="n">1</span><span>Recibir al cliente</span></li>
+          <li><span class="n">2</span><span>Conocer sus necesidades</span></li>
+          <li><span class="n">3</span><span>Presentar destinos</span></li>
+          <li><span class="n">4</span><span>Elaborar cotizaciones</span></li>
+          <li><span class="n">5</span><span>Gestionar reservaciones</span></li>
+          <li><span class="n">6</span><span>Confirmar pagos</span></li>
+          <li><span class="n">7</span><span>Ofrecer seguimiento</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="equipo">
+    <div class="wrap team">
+      <div>
+        <h2 class="h2r">Organigrama y equipo</h2>
+        <div class="org">
+          <div class="org-top"><span class="role">Gerencia general</span><span class="person">Warlin Peña</span></div>
+          <div class="org-grid">
+            <div class="member"><span class="role">Administración</span><span class="person">Nicole Rodriguez</span></div>
+            <div class="member"><span class="role">Finanzas</span><span class="person">Yesenia Bello</span></div>
+            <div class="member"><span class="role">Recursos humanos</span><span class="person">Yaribetca Aracena</span></div>
+            <div class="member"><span class="role">Marketing</span><span class="person">Brayelin Vargas</span></div>
+            <div class="member"><span class="role">Ventas</span><span class="person">Luisanny Peña</span></div>
+            <div class="member"><span class="role">Servicio al cliente</span><span class="person">Ronailyn</span></div>
+            <div class="member"><span class="role">Reservaciones</span><span class="person">Esmerlin Rodriguez</span></div>
+            <div class="member"><span class="role">Coordinación de viajes</span><span class="person">Esmarlin Ureña</span></div>
+            <div class="member"><span class="role">Asistencia administrativa</span><span class="person">Ruth Esther</span></div>
+          </div>
+        </div>
+        <p class="team-note">Somos estudiantes con conocimientos académicos de administración, contabilidad y organización empresarial, con disposición para aprender y trabajar en equipo.</p>
+      </div>
+      <figure class="office">
+        <img src="img/oficina.jpg" alt="Oficina de la agencia con recepción, sillas azules y un mapamundi en la pared" loading="lazy">
+        <figcaption>Oficina: recepción, administración, finanzas, ventas, reservaciones y atención al cliente.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section s-alt" id="cotizar">
+    <div class="wrap quote">
+      <div class="copy">
+        <h2 class="h2r">Cotiza tu viaje</h2>
+        <p class="lead">Elige un paquete o cuéntanos a dónde quieres ir. Preparamos tu solicitud en un mensaje listo para enviar a la agencia.</p>
+        <p class="where"><strong>Ubicación</strong>Santiago de los Caballeros, República Dominicana</p>
+      </div>
+      <form class="card" id="form-cotizar" novalidate>
+        <div class="field full">
+          <label for="f-nombre">Tu nombre</label>
+          <input id="f-nombre" name="nombre" type="text" autocomplete="name" required>
+        </div>
+        <div class="field full">
+          <label for="f-destino">Destino</label>
+          <select id="f-destino" name="destino"></select>
+        </div>
+        <div class="field">
+          <label for="f-personas">Personas</label>
+          <input id="f-personas" name="personas" type="number" min="1" max="40" value="2" inputmode="numeric" required>
+        </div>
+        <div class="field">
+          <label for="f-fecha">Salida aproximada</label>
+          <input id="f-fecha" name="fecha" type="date">
+        </div>
+        <div class="field full">
+          <label for="f-notas">Comentarios (opcional)</label>
+          <textarea id="f-notas" name="notas" rows="3"></textarea>
+        </div>
+        <p class="estimate" id="estimado" aria-live="polite"></p>
+        <div class="form-actions"><button class="btn btn-teal" type="submit">Preparar mi solicitud</button></div>
+        <div class="result" id="resultado" hidden>
+          <label for="mensaje" class="note">Tu mensaje</label>
+          <textarea id="mensaje" readonly></textarea>
+          <div class="row">
+            <button class="btn btn-line" type="button" id="copiar">Copiar mensaje</button>
+            <a class="btn btn-teal" id="wa" href="#cotizar" target="_blank" rel="noopener" hidden>Abrir WhatsApp</a>
+            <span class="note" id="copiado" role="status"></span>
+          </div>
+          <p class="note">Envía este mensaje a la agencia para recibir tu cotización.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer on-navy">
+  <div class="wrap foot">
+    <div class="logo-card"><img src="img/logo.jpg" alt="Logo de Caribbean Travel Agency" loading="lazy"></div>
+    <div>
+      <p>Una oportunidad de emprendimiento, aprendizaje y crecimiento. Nuestro compromiso: confianza, responsabilidad y experiencias inolvidables.</p>
+      <p class="tagline">«Viaja, descubre y vive la experiencia».</p>
+    </div>
+  </div>
+  <div class="wrap legal">© 2026 Caribbean Travel Agency · Santiago de los Caballeros, República Dominicana</div>
+</footer>
+
+<script>
+// Número de WhatsApp de la agencia (código de país + número, sin + ni espacios). Ejemplo: "18095550123".
+// Mientras esté vacío, el visitante copia el mensaje y lo envía por su cuenta.
+const WHATSAPP_NUMBER = "";
+
+const PACKS = [
+  { id: "punta-cana", g: "nac", name: "Punta Cana", stay: "3 días / 2 noches", incl: "Hotel todo incluido + transporte", price: 18500, img: "punta-cana", alt: "Playa con cabaña y vista al mar en Punta Cana" },
+  { id: "puerto-plata", g: "nac", name: "Puerto Plata", stay: "3 días / 2 noches", incl: "Hotel + teleférico + excursión", price: 14900, img: "puerto-plata", alt: "Costa con montañas y mar turquesa en Puerto Plata" },
+  { id: "samana", g: "nac", name: "Samaná", stay: "3 días / 2 noches", incl: "Hotel + avistamiento de ballenas", price: 13500, img: "samana", alt: "Cola de ballena frente a una isla verde en Samaná" },
+  { id: "bayahibe", g: "nac", name: "Bayahíbe", stay: "2 días / 1 noche", incl: "Hotel + excursión a isla", price: 15800, img: "bayahibe", alt: "Playa de arena blanca con estrella de mar y catamarán en Bayahíbe" },
+  { id: "jarabacoa", g: "nac", name: "Jarabacoa", stay: "2 días / 1 noche", incl: "Cabaña + rafting + senderismo", price: 9800, img: "jarabacoa", alt: "Río con rafting entre montañas en Jarabacoa" },
+  { id: "colombia", g: "int", name: "Colombia", stay: "5 días / 4 noches", incl: "Vuelo + hotel + city tour", price: 62000, img: "colombia", alt: "Calle colonial con balcones llenos de flores en Colombia" },
+  { id: "panama", g: "int", name: "Panamá", stay: "4 días / 3 noches", incl: "Vuelo + hotel + tour del canal", price: 55000, img: "panama", alt: "Canal y horizonte de rascacielos en Panamá" },
+  { id: "mexico", g: "int", name: "México", stay: "6 días / 5 noches", incl: "Vuelo + hotel + ruinas mayas", price: 78000, img: "mexico", alt: "Ruinas mayas sobre un acantilado frente al mar en México" },
+  { id: "estados-unidos", g: "int", name: "Estados Unidos", stay: "6 días / 5 noches", incl: "Vuelo + hotel + parques", price: 95000, img: "estados-unidos", alt: "Avenida frente a la playa con edificios art déco en Estados Unidos" },
+  { id: "espana", g: "int", name: "España", stay: "8 días / 7 noches", incl: "Vuelo + hotel + tours", price: 145000, img: "espana", alt: "Plaza monumental con un canal al atardecer en España" }
+];
+
+const money = n => "RD$" + n.toLocaleString("en-US");
+const $ = id => document.getElementById(id);
+
+function ticket(p) {
+  return `<article class="ticket">
+    <img src="img/${p.img}.jpg" alt="${p.alt}" loading="lazy">
+    <div class="ticket-body">
+      <h4>${p.name}</h4>
+      <p class="stay">${p.stay}</p>
+      <p class="incl">${p.incl}</p>
+    </div>
+    <div class="stub">
+      <div><span class="per">Por persona</span><span class="price"><small>RD$</small>${p.price.toLocaleString("en-US")}</span></div>
+      <a class="btn btn-line" href="#cotizar" data-pack="${p.id}" aria-label="Cotizar ${p.name}">Cotizar</a>
+    </div>
+  </article>`;
+}
+$("grid-nac").innerHTML = PACKS.filter(p => p.g === "nac").map(ticket).join("");
+$("grid-int").innerHTML = PACKS.filter(p => p.g === "int").map(ticket).join("");
+
+const sel = $("f-destino");
+const opt = p => `<option value="${p.id}">${p.name} · ${p.stay} · ${money(p.price)}</option>`;
+sel.innerHTML =
+  `<optgroup label="Nacionales">${PACKS.filter(p => p.g === "nac").map(opt).join("")}</optgroup>` +
+  `<optgroup label="Internacionales">${PACKS.filter(p => p.g === "int").map(opt).join("")}</optgroup>` +
+  `<option value="otro">Otro destino</option>`;
+
+const packById = id => PACKS.find(p => p.id === id);
+const people = () => Math.max(1, Math.min(40, parseInt($("f-personas").value, 10) || 1));
+
+function updateEstimate() {
+  const p = packById(sel.value), n = people();
+  $("estimado").innerHTML = p
+    ? `Estimado referencial para ${n} ${n === 1 ? "persona" : "personas"}<b>${money(p.price * n)}</b>Precio por persona × personas. La cotización final puede variar.`
+    : `Cuéntanos a dónde quieres ir en los comentarios y preparamos una cotización a tu medida.`;
+}
+sel.addEventListener("change", updateEstimate);
+$("f-personas").addEventListener("input", updateEstimate);
+document.addEventListener("click", e => {
+  const a = e.target.closest("[data-pack]");
+  if (a) { sel.value = a.dataset.pack; updateEstimate(); }
+});
+updateEstimate();
+
+$("form-cotizar").addEventListener("submit", e => {
+  e.preventDefault();
+  const nombre = $("f-nombre").value.trim();
+  if (!nombre) { $("f-nombre").focus(); return; }
+  const p = packById(sel.value), n = people();
+  const destino = p ? `el paquete a ${p.name} (${p.stay})` : "un viaje a otro destino";
+  let fecha = "";
+  if ($("f-fecha").value) {
+    fecha = ", con salida aproximada el " + new Date($("f-fecha").value + "T12:00:00").toLocaleDateString("es-DO", { day: "numeric", month: "long", year: "numeric" });
+  }
+  const notas = $("f-notas").value.trim();
+  const msg = `Hola, soy ${nombre}. Quiero cotizar ${destino} para ${n} ${n === 1 ? "persona" : "personas"}${fecha}.${notas ? " " + notas : ""} Gracias.`;
+  $("mensaje").value = msg;
+  $("copiado").textContent = "";
+  $("resultado").hidden = false;
+  const wa = $("wa");
+  if (WHATSAPP_NUMBER) { wa.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg); wa.hidden = false; }
+  $("mensaje").focus();
+});
+
+$("copiar").addEventListener("click", async () => {
+  const ta = $("mensaje");
+  try { await navigator.clipboard.writeText(ta.value); $("copiado").textContent = "Mensaje copiado."; }
+  catch (_) { ta.focus(); ta.select(); $("copiado").textContent = "Selecciona el texto y cópialo."; }
+});
+</script>
+
+</body></html>
